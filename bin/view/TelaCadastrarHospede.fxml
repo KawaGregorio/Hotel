@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="fundo" stylesheets="@style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaCadastrarHospedeController">
+   <top>
+      <AnchorPane prefHeight="100.0" prefWidth="800.0" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="179.0" layoutY="14.0" text="Cadastrar Hóspede">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <AnchorPane layoutX="21.0" layoutY="37.0" prefHeight="500.0" prefWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <TextField fx:id="idEmail" layoutX="28.0" layoutY="134.0" prefHeight="40.0" prefWidth="444.0" promptText="ex: example@gmail.com">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <TextField fx:id="idCpf" layoutX="28.0" layoutY="206.0" prefHeight="40.0" prefWidth="444.0" promptText="ex: 123.456.789-00">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <DatePicker fx:id="idDtNact" layoutX="520.0" layoutY="171.0" onAction="#DtNact" prefHeight="43.0" prefWidth="255.0" promptText="Data de Nascimento" styleClass="date-picker-popup" />
+                  <TextField fx:id="idNome" layoutX="28.0" layoutY="55.0" prefHeight="41.0" prefWidth="444.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="28.0" layoutY="31.0" text="Nome Completo">
+                     <font>
+                        <Font name="ArtifaktElement-Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="107.0" text="E-mail">
+                     <font>
+                        <Font name="ArtifaktElement-Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="35.0" layoutY="179.0" text="CPF">
+                     <font>
+                        <Font name="ArtifaktElement-Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <Button fx:id="idCadastrar" layoutX="273.0" layoutY="386.0" mnemonicParsing="false" onAction="#Cadastrar" prefHeight="55.0" prefWidth="255.0" text="Cadastrar">
+                     <font>
+                        <Font name="ArtifaktElement-Book" size="24.0" />
+                     </font>
+                  </Button>
+                  <TextField fx:id="idTelefone" layoutX="28.0" layoutY="284.0" prefHeight="40.0" prefWidth="444.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </TextField>
+                  <Label layoutX="28.0" layoutY="257.0" text="Telefone">
+                     <font>
+                        <Font name="ArtifaktElement-Black" size="18.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="520.0" layoutY="147.0" text="Data de nascimento">
+                     <font>
+                        <Font name="ArtifaktElement-Black" size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+   </center>
+</BorderPane>

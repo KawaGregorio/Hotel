@@ -1,0 +1,73 @@
+.fundo{
+    -fx-background-color: #E5E7E6;
+}
+
+
+.text-field{
+    -fx-border-radius: 64px;
+    -fx-background-radius: 64px;
+    -fx-background-color: white;
+    -fx-border-width: 2px;
+    -fx-border-color: #272635;
+    -fx-text-fill: #272635;
+}
+
+.button{
+    -fx-border-radius: 32px;
+    -fx-background-radius: 32px;
+    -fx-background-color: #272635;
+    -fx-text-fill: white;
+}
+.button:hover{
+    -fx-border-radius: 32px;
+    -fx-background-radius: 32px;
+    -fx-border-width: 2px;
+    -fx-border-color: #272635;
+    -fx-background-color: white;
+    -fx-text-fill: #272635;
+}
+
+.date-picker{
+    -fx-border-radius: 64px;
+    -fx-background-radius: 8px;
+    -fx-background-color: white;
+    -fx-border-width: 2px;
+    -fx-border-color: #272635;
+    -fx-text-fill: #272635;
+    -fx-effect: null;
+
+}
+.date-picker-popup {
+    -fx-border-color: #272635;
+    -fx-border-width: 2px;
+    -fx-border-radius: 8px;
+    -fx-box-shadow: none;
+}
+
+.date-picker .text-field {
+    -fx-text-fill: #333333;
+    -fx-font-family: "Arial";
+    -fx-font-size: 14px;
+    -fx-border-color: transparent;
+}
+
+
+.table-view{
+
+    -fx-background-color: white;
+    -fx-border-width: 2px;
+    -fx-border-color: #272635;
+    -fx-text-fill: #272635;
+
+}
+
+.choice-box{
+
+    -fx-background-color: white;
+    -fx-border-width: 2px;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-border-color: #272635;
+    -fx-text-fill: #272635;
+}
+

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" styleClass="fundo" stylesheets="@style.css" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CadastroController">
+   <center>
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+         <children>
+            <TextField fx:id="idNomeCom" layoutX="217.0" layoutY="38.0" prefHeight="40.0" prefWidth="240.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="idEmailFunc" layoutX="14.0" layoutY="117.0" prefHeight="40.0" prefWidth="444.0" promptText="ex: example@gmail.com">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="idCPFFunc" layoutX="14.0" layoutY="189.0" prefHeight="40.0" prefWidth="444.0" promptText="ex: 123.456.789-00">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <TextField fx:id="idSenhaFunc" layoutX="14.0" layoutY="271.0" prefHeight="40.0" prefWidth="444.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <DatePicker fx:id="idDataFunc" layoutX="503.0" layoutY="37.0" onAction="#DataFunc" prefHeight="43.0" prefWidth="255.0" promptText="Data de Nascimento" styleClass="date-picker-popup" />
+            <TextField fx:id="idNomeUs" layoutX="14.0" layoutY="38.0" prefHeight="40.0" prefWidth="200.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="14.0" layoutY="14.0" text="Nome de Usuário">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="217.0" layoutY="14.0" text="Nome Completo">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="90.0" text="E-mail">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="162.0" text="CPF">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="21.0" layoutY="244.0" text="Crie uma Senha">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="idCadastrarFunc" layoutX="273.0" layoutY="341.0" mnemonicParsing="false" onAction="#CadastrarFunc" prefHeight="55.0" prefWidth="255.0" text="Cadastrar-se">
+               <font>
+                  <Font name="ArtifaktElement-Book" size="24.0" />
+               </font>
+            </Button>
+            <TextField fx:id="idTelFunc" layoutX="511.0" layoutY="151.0" prefHeight="40.0" prefWidth="240.0">
+               <font>
+                  <Font size="14.0" />
+               </font>
+            </TextField>
+            <Label layoutX="511.0" layoutY="124.0" text="Telefone">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="18.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </center>
+   <top>
+      <AnchorPane prefHeight="153.0" prefWidth="800.0" stylesheets="@style.css" BorderPane.alignment="CENTER">
+         <children>
+            <Label layoutX="255.0" layoutY="56.0" prefHeight="70.0" prefWidth="290.0" text="Cadastre-se">
+               <font>
+                  <Font name="ArtifaktElement-Black" size="48.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+   </top>
+</BorderPane>

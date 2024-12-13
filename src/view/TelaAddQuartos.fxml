@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaAddController">
+   <children>
+      <Label layoutX="25.0" layoutY="29.0" text="Num Quarto:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idNumQua" layoutX="25.0" layoutY="89.0" prefHeight="53.0" prefWidth="337.0" />
+      <Label layoutX="25.0" layoutY="168.0" text="Disponibilidade:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idDisp" layoutX="25.0" layoutY="228.0" prefHeight="53.0" prefWidth="337.0" />
+      <Label layoutX="25.0" layoutY="300.0" text="Preço:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idprec" layoutX="25.0" layoutY="360.0" prefHeight="53.0" prefWidth="166.0" />
+      <Label layoutX="25.0" layoutY="433.0" text="ID Hospede:">
+         <font>
+            <Font size="36.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idHo" layoutX="25.0" layoutY="493.0" prefHeight="53.0" prefWidth="337.0" />
+      <Button fx:id="idAdc" layoutX="578.0" layoutY="493.0" mnemonicParsing="false" onAction="#Adc" text="Adicionar">
+         <font>
+            <Font size="29.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
