@@ -83,7 +83,7 @@ public class CadastroController {
             }
 
             if (dataFunc == null){
-                throw new IllegalArgumentException("A data de contratação é obrigatória.\n");
+                throw new IllegalArgumentException("A data de nascimento é obrigatória.\n");
 
             }
 
