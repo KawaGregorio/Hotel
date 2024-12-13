@@ -5,14 +5,14 @@
 	"java.project.outputPath": "bin",
 	"java.project.referencedLibraries": [
 		"lib/**/*.jar",
-		"D:/javafx/lib/javafx.base.jar",
-		"D:/javafx/lib/javafx.controls.jar",
-		"D:/javafx/lib/javafx.fxml.jar",
-		"D:/javafx/lib/javafx.graphics.jar",
-		"D:/javafx/lib/javafx.media.jar",
-		"D:/javafx/lib/javafx.swing.jar",
-		"D:/javafx/lib/javafx.web.jar",
-		"D:/javafx/lib/javafx-swt.ja",
-		"C:/Users/kawa0/Downloads/Mysql/mysql-connector-j-9.1.0.jar"
+		"C:/javafx/lib/javafx.base.jar",
+		"C:/javafx/lib/javafx.controls.jar",
+		"C:/javafx/lib/javafx.fxml.jar",
+		"C:/javafx/lib/javafx.graphics.jar",
+		"C:/javafx/lib/javafx.media.jar",
+		"C:/javafx/lib/javafx.swing.jar",
+		"C:/javafx/lib/javafx.web.jar",
+		"C:/javafx/lib/javafx-swt.ja",
+		"c:\\Users\\301309x\\Desktop\\POO\\mysql-connector-j-9.1.0.jar"
 	]
 }

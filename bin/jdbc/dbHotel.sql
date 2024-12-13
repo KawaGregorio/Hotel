@@ -37,8 +37,23 @@ create table Quartos(
         REFERENCES dbhotel.Hospede(idHospede)
 );
 
-insert into Quartos(Numero_Quarto, Disponibilidade, Preco, idHospede)
-value(237, "Livre", 279.99, 2);
+create table Reserva(
+idReserva int not null auto_increment,
+Num_Quarto int not null,
+Data_Checkin datetime not null,
+pagamento double not null,
+idHospede int not null,
+
+    primary key (idReserva), 
+    CONSTRAINT fk_Hospedee
+        FOREIGN KEY(idHospede)
+        REFERENCES dbhotel.Hospede(idHospede)
+
+
+);
+
+
+
 
 ALTER TABLE quartos modify column Disponibilidade varchar(20) null;
 
