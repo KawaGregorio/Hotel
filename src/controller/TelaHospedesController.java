@@ -16,6 +16,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.DatePicker;
 import javafx.scene.control.TableColumn;
@@ -30,6 +31,7 @@ import model.Mod.AltData;
 import model.Mod.AltEmail;
 import model.Mod.AltNome;
 import model.Mod.AltTel;
+import util.AlertUtil;
 
 public class TelaHospedesController {
 
@@ -114,60 +116,177 @@ public class TelaHospedesController {
 
     @FXML
     void btnCPF(ActionEvent event) {
-        int cpf = Integer.parseInt(txtCPF.getText());
-        int idH = Integer.parseInt(txtHospede.getText());
+        try {
+            String idHString = txtHospede.getText();
+            String cpfString = txtCPF.getText();
+            int cpf = 0;
 
-        AltCPF ALTcp = new AltCPF(cpf, idH);
-
-        if (AltCPFDao.cadastrar(ALTcp)) {
-            System.out.println("Cadastrado!");
-        }
+            if (cpfString == null || cpfString.trim().isEmpty()) {
+                throw new IllegalArgumentException("O campo 'CPF' não pode estar vazio.");
+            }
+            cpf = Integer.parseInt(cpfString);
+            if (String.valueOf(cpf).length() != 11) {
+                throw new IllegalArgumentException("O CPF deve conter exatamente 11 dígitos.");
+            }
+    
+            
+            if (idHString == null || idHString.trim().isEmpty()) {
+                throw new IllegalArgumentException("O campo 'Hóspede' não pode estar vazio.");
+            }
+            int idH = Integer.parseInt(idHString);
+    
+            AltCPF altCPF = new AltCPF(cpf, idH);
+    
+            if (AltCPFDao.cadastrar(altCPF)) {
+                System.out.println("Cadastrado com sucesso!");
+            } else {
+                System.out.println("Erro ao cadastrar.");
+            }
+        } catch (NumberFormatException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (IllegalArgumentException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (Exception e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            }
     }
 
     @FXML
     void btnData(ActionEvent event) {
+        try{
         LocalDate data = iddpData.getValue();
-        int idH = Integer.parseInt(txtHospede.getText());
+        int idH = 0;
+        String idHString = txtHospede.getText();
 
+
+        if (data == null) {
+            throw new IllegalArgumentException("O campo 'Data' não pode estar vazio.");
+        }
+        if (idHString == null || idHString.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo 'Hospede' não pode estar vazio.");
+        }
+        
+        idH = Integer.parseInt(idHString);
+
+        if (idH <= 0) {
+            throw new IllegalArgumentException("O campo 'Hospede' deve ser maior que zero.");
+        }
         AltData da = new AltData(data, idH);
 
         if (AltDataDao.cadastrar(da)) {
             System.out.println("Cadastrado!");
         }
-    }
+    } catch (NumberFormatException e) {
+    AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+    } catch (IllegalArgumentException e) {
+    AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+    } catch (Exception e) {
+    AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+        }
+}
 
     @FXML
     void btnDel(ActionEvent event) {
-        int id = Integer.parseInt(idtxtDel.getText());
+        try{
+        String idString = idtxtDel.getText();
+        int id = 0;
+
+
+        if (idString == null || idString.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo 'Hospede' não pode estar vazio.");
+        }
+
+        id = Integer.parseInt(idtxtDel.getText());
+
+        if (id <= 0) {
+            throw new IllegalArgumentException("O campo 'Hospede' deve ser maior que zero.");
+        }
 
         DelQuartos qua = new DelQuartos(id);
 
         if (DelHospedesDao.cadastrar(qua)) {
             System.out.println("Cadastrado!");
         }
+        } catch (NumberFormatException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (IllegalArgumentException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (Exception e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            }
     }
 
     @FXML
     void btnEmail(ActionEvent event) {
+        try{
         String email = txtEmail.getText();
-        int idH = Integer.parseInt(txtHospede.getText());
+        int idH = 0;
+        String idHString = txtHospede.getText();
+        
+        if (email == null || email.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo 'E-mail' não pode estar vazio.");
+        }
+        if (!email.matches("^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,}$")) {
+            throw new IllegalArgumentException("O campo 'E-mail' deve ter um formato valido.");
+        }
+
+        if (idHString == null || idHString.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo 'Hospede' não pode estar vazio.");
+        }
+        
+        idH = Integer.parseInt(idHString);
+
+        if (idH <= 0) {
+            throw new IllegalArgumentException("O campo 'Hospede' deve ser maior que zero.");
+        }
 
         AltEmail em = new AltEmail(email, idH);
 
         if (AltEmailDao.cadastrar(em)) {
             System.out.println("Cadastrado!");
         }
+        } catch (NumberFormatException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (IllegalArgumentException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (Exception e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            }
     }
 
     @FXML
     void btnNome(ActionEvent event) {
+        try{
         String Nome = txtNome.getText();
-        int idH = Integer.parseInt(txtHospede.getText());
+        int idH = 0;
+        String idHString = txtHospede.getText();
+
+        if (Nome == null || Nome.trim().isEmpty()||Nome.isBlank() || Nome.length() < 3)  {
+            throw new IllegalArgumentException("O nome é obrigatório e precisa ter mais de 3 letras.");
+        }
+
+
+        if (idHString == null || idHString.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo 'Hospede' não pode estar vazio.");
+        }
+        
+        idH = Integer.parseInt(idHString);
+
+        if (idH <= 0) {
+            throw new IllegalArgumentException("O campo 'Hospede' deve ser maior que zero.");
+        }
 
         AltNome ALT = new AltNome(Nome, idH);
 
         if (AltNomeDao.cadastrar(ALT)) {
             System.out.println("Cadastrado!");
+        }
+    }catch (NumberFormatException e) {
+        AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+        } catch (IllegalArgumentException e) {
+        AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+        } catch (Exception e) {
+        AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
         }
     }
 
@@ -182,14 +301,42 @@ public class TelaHospedesController {
 
     @FXML
     void btnTel(ActionEvent event) {
+        try{
         String te = TxtTel.getText();
-        int idH = Integer.parseInt(txtHospede.getText());
+        int idH = 0;
+        String idHString = txtHospede.getText();
+
+        if (te == null || te.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo 'Telefone' não pode estar vazio.");
+        }
+        if (!te.matches("^\\d{10,11}$")) {
+            throw new IllegalArgumentException("O campo 'Telefone' deve conter 11 numeros.");
+        }
+
+        if (idHString == null || idHString.trim().isEmpty()) {
+            throw new IllegalArgumentException("O campo 'Hospede' não pode estar vazio.");
+        }
+        
+        idH = Integer.parseInt(idHString);
+
+        if (idH <= 0) {
+            throw new IllegalArgumentException("O campo 'Hospede' deve ser maior que zero.");
+        }
+
+
 
         AltTel tel = new AltTel(te, idH);
 
         if (AltTelDao.cadastrar(tel)) {
             System.out.println("Cadastrado!");
         }
+        } catch (NumberFormatException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (IllegalArgumentException e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            } catch (Exception e) {
+            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
+            }
     }
 
 }

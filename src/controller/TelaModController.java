@@ -38,20 +38,20 @@ int idQua = 0;
 try {
 
     if (idHospString == null || idHospString.trim().isEmpty()) {
-        throw new IllegalArgumentException("O campo 'ID do Hóspede' não pode estar vazio.");
+        throw new IllegalArgumentException("O campo 'Hóspede' não pode estar vazio.");
     }
     idHosp = Integer.parseInt(idHospString);
     if (idHosp <= 0) {
-        throw new IllegalArgumentException("O campo 'ID do Hóspede' deve ser um número maior que zero.");
+        throw new IllegalArgumentException("O campo 'Hóspede' deve ser um número maior que zero.");
     }
 
 
     if (idQuaString == null || idQuaString.trim().isEmpty()) {
-        throw new IllegalArgumentException("O campo 'ID do Quarto' não pode estar vazio.");
+        throw new IllegalArgumentException("O campo 'Numero do Quarto' não pode estar vazio.");
     }
     idQua = Integer.parseInt(idQuaString);
     if (idQua <= 0) {
-        throw new IllegalArgumentException("O campo 'ID do Quarto' deve ser um número maior que zero.");
+        throw new IllegalArgumentException("O campo 'Numero do Quarto' deve ser um número maior que zero.");
     }
 
     if (disp == null || disp.trim().isEmpty()) {

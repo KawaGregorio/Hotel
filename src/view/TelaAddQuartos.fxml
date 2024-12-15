@@ -6,37 +6,41 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/22" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaAddController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" stylesheets="@style.css" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.TelaAddController">
    <children>
-      <Label layoutX="25.0" layoutY="29.0" text="Num Quarto:">
+      <Label layoutX="17.0" layoutY="116.0" text="Num Quarto:">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="idNumQua" layoutX="25.0" layoutY="89.0" prefHeight="53.0" prefWidth="337.0" />
-      <Label layoutX="25.0" layoutY="168.0" text="Disponibilidade:">
+      <TextField fx:id="idNumQua" layoutX="15.0" layoutY="151.0" prefHeight="35.0" prefWidth="337.0" />
+      <Label layoutX="14.0" layoutY="199.0" text="Disponibilidade:">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="idDisp" layoutX="25.0" layoutY="228.0" prefHeight="53.0" prefWidth="337.0" />
-      <Label layoutX="25.0" layoutY="300.0" text="Preço:">
+      <TextField fx:id="idDisp" layoutX="16.0" layoutY="234.0" prefHeight="35.0" prefWidth="337.0" />
+      <Label layoutX="14.0" layoutY="269.0" text="Preço:">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="idprec" layoutX="25.0" layoutY="360.0" prefHeight="53.0" prefWidth="166.0" />
-      <Label layoutX="25.0" layoutY="433.0" text="ID Hospede:">
+      <TextField fx:id="idprec" layoutX="14.0" layoutY="304.0" prefHeight="53.0" prefWidth="171.0" />
+      <Label layoutX="15.0" layoutY="356.0" text="Hospede:">
          <font>
-            <Font size="36.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="idHo" layoutX="25.0" layoutY="493.0" prefHeight="53.0" prefWidth="337.0" />
-      <Button fx:id="idAdc" layoutX="578.0" layoutY="493.0" mnemonicParsing="false" onAction="#Adc" text="Adicionar">
+      <TextField fx:id="idHo" layoutX="17.0" layoutY="391.0" prefHeight="35.0" prefWidth="337.0" />
+      <Button fx:id="idAdc" layoutX="292.0" layoutY="487.0" mnemonicParsing="false" onAction="#Adc" prefHeight="63.0" prefWidth="217.0" text="Adicionar">
          <font>
             <Font size="29.0" />
          </font>
       </Button>
+      <Label layoutX="209.0" layoutY="29.0" text="Adicionar Quartos">
+         <font>
+            <Font size="48.0" />
+         </font>
+      </Label>
    </children>
 </AnchorPane>

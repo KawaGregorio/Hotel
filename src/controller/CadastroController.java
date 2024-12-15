@@ -54,20 +54,20 @@ public class CadastroController {
             int cpfFunc = 0;
             
             if (nomeus == null || nomeus.trim().isEmpty()||nomeus.isBlank() || nomeus.length() < 3)  {
-                throw new IllegalArgumentException("O nome de usuário é obrigatório e precisa ter mais de 3 letras.\n");
+                throw new IllegalArgumentException("O nome de usuário é obrigatório e precisa ter mais de 3 letras.");
             } 
             if (nomeCom == null || nomeCom.trim().isEmpty() || nomeus.length() < 3) {
-                throw new IllegalArgumentException("O nome Completo é obrigatorio e precisa ter mais de 3 letras.\n");
+                throw new IllegalArgumentException("O nome Completo é obrigatorio e precisa ter mais de 3 letras.");
             }
             if (emailFunc == null || emailFunc.trim().isEmpty() || !emailFunc.matches("^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$")){
-                throw new IllegalArgumentException("O e-mail é obrigatório e deve estar em um formato válido.\n");
+                throw new IllegalArgumentException("O e-mail é obrigatório e deve estar em um formato válido.");
             }
             if (senhafunc == null || senhafunc.trim().isEmpty() || senhafunc.length() <= 6){
-                throw new IllegalArgumentException("A senha é obrigatória e deve ter pelo menos 6 caracteres.\n");
+                throw new IllegalArgumentException("A senha é obrigatória e deve ter pelo menos 6 caracteres.");
 
             }
             if (telFunc == null || telFunc.trim().isEmpty() || !telFunc.matches("^\\d{10,11}$")){
-                throw new IllegalArgumentException("O telefone é obrigatório e deve conter apenas números (10 ou 11 dígitos). \n");
+                throw new IllegalArgumentException("O telefone é obrigatório e deve conter apenas números (10 ou 11 dígitos).");
 
             }
             if (cpfString == null || cpfString.trim().isEmpty()) {

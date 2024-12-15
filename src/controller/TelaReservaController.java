@@ -100,11 +100,11 @@ public class TelaReservaController{
         }
 
         if (idHospString == null || idHospString.trim().isEmpty()) {
-            throw new IllegalArgumentException("O campo 'ID do Cliente' não pode estar vazio.");
+            throw new IllegalArgumentException("O campo 'Cliente' não pode estar vazio.");
         }
             idHosp = Integer.parseInt(idHospString);
         if (idHosp <= 0) {
-            throw new IllegalArgumentException("O campo 'ID do Cliente' deve ser maior que zero.");
+            throw new IllegalArgumentException("O campo 'Cliente' deve ser maior que zero.");
         }
 
 
