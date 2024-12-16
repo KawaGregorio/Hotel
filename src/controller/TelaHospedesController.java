@@ -117,24 +117,20 @@ public class TelaHospedesController {
     @FXML
     void btnCPF(ActionEvent event) {
         try {
-            String idHString = txtHospede.getText();
-            String cpfString = txtCPF.getText();
-            int cpf = 0;
+            int idH = Integer.parseInt(txtHospede.getText());
+            int cpf = Integer.parseInt(txtCPF.getText());
+            String idHString = String.valueOf(idH);
+            String cpfString = String.valueOf(cpf);
 
-            if (cpfString == null || cpfString.trim().isEmpty()) {
-                throw new IllegalArgumentException("O campo 'CPF' não pode estar vazio.");
-            }
-            cpf = Integer.parseInt(cpfString);
-            if (String.valueOf(cpf).length() != 11) {
-                throw new IllegalArgumentException("O CPF deve conter exatamente 11 dígitos.");
-            }
-    
-            
             if (idHString == null || idHString.trim().isEmpty()) {
                 throw new IllegalArgumentException("O campo 'Hóspede' não pode estar vazio.");
             }
-            int idH = Integer.parseInt(idHString);
-    
+            
+            if (cpfString == null || cpfString.trim().isEmpty()) {
+                throw new IllegalArgumentException("O campo 'Hóspede' não pode estar vazio.");
+            }
+
+
             AltCPF altCPF = new AltCPF(cpf, idH);
     
             if (AltCPFDao.cadastrar(altCPF)) {
@@ -145,8 +141,6 @@ public class TelaHospedesController {
         } catch (NumberFormatException e) {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             } catch (IllegalArgumentException e) {
-            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-            } catch (Exception e) {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             }
     }
@@ -180,9 +174,7 @@ public class TelaHospedesController {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
     } catch (IllegalArgumentException e) {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-    } catch (Exception e) {
-    AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-        }
+    }
 }
 
     @FXML
@@ -210,8 +202,6 @@ public class TelaHospedesController {
         } catch (NumberFormatException e) {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             } catch (IllegalArgumentException e) {
-            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-            } catch (Exception e) {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             }
     }
@@ -249,8 +239,6 @@ public class TelaHospedesController {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             } catch (IllegalArgumentException e) {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-            } catch (Exception e) {
-            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             }
     }
 
@@ -284,8 +272,6 @@ public class TelaHospedesController {
     }catch (NumberFormatException e) {
         AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
         } catch (IllegalArgumentException e) {
-        AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-        } catch (Exception e) {
         AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
         }
     }
@@ -333,8 +319,6 @@ public class TelaHospedesController {
         } catch (NumberFormatException e) {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             } catch (IllegalArgumentException e) {
-            AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-            } catch (Exception e) {
             AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             }
     }

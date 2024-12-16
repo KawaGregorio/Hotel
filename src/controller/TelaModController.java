@@ -57,10 +57,6 @@ try {
     if (disp == null || disp.trim().isEmpty()) {
         throw new IllegalArgumentException("O campo 'Disponibilidade' não pode estar vazio.");
     }
-    if (!disp.equalsIgnoreCase("Disponível") && !disp.equalsIgnoreCase("Indisponível")) {
-        throw new IllegalArgumentException("O campo 'Disponibilidade' deve ser 'Disponível' ou 'Indisponível'.");
-    }
-
 
     AltQuartos alt = new AltQuartos(idHosp, disp, idQua);
     if (AltQuartosDao.cadastrar(alt)) {
@@ -72,8 +68,6 @@ try {
 } catch (NumberFormatException e) {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
 } catch (IllegalArgumentException e) {
-    AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-} catch (Exception e) {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
 }
 

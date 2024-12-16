@@ -51,7 +51,7 @@ public class CadastroController {
 
             StringBuilder erros = new StringBuilder();
 
-            int cpfFunc = 0;
+            int cpfFunc = Integer.parseInt(idCPFFunc.getText());
             
             if (nomeus == null || nomeus.trim().isEmpty()||nomeus.isBlank() || nomeus.length() < 3)  {
                 throw new IllegalArgumentException("O nome de usuário é obrigatório e precisa ter mais de 3 letras.");
@@ -70,17 +70,7 @@ public class CadastroController {
                 throw new IllegalArgumentException("O telefone é obrigatório e deve conter apenas números (10 ou 11 dígitos).");
 
             }
-            if (cpfString == null || cpfString.trim().isEmpty()) {
-                throw new IllegalArgumentException("O campo 'CPF' não pode estar vazio.");
-            }
-            try {
-                cpfFunc = Integer.parseInt(cpfString);
-                if (String.valueOf(cpfFunc).length() != 11) {
-                    throw new IllegalArgumentException("O campo 'CPF' deve conter exatamente 11 dígitos.");
-                }
-            } catch (NumberFormatException e) {
-                throw new IllegalArgumentException("O campo 'CPF' deve conter apenas números.");
-            }
+            
 
             if (dataFunc == null){
                 throw new IllegalArgumentException("A data de nascimento é obrigatória.\n");

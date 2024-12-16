@@ -51,9 +51,6 @@ public class TelaAddController {
         if (disp == null || disp.trim().isEmpty()) {
             throw new IllegalArgumentException("O campo 'Disponibilidade' não pode estar vazio.");
         }
-        if (!disp.equalsIgnoreCase("Disponível") && !disp.equalsIgnoreCase("Indisponível")) {
-            throw new IllegalArgumentException("O campo 'Disponibilidade' deve ser 'Disponível' ou 'Indisponível'.");
-        }
         
         if (stringPrec == null || stringPrec.trim().isEmpty()) {
             throw new IllegalArgumentException("O campo 'Preço' não pode estar vazio.");
@@ -80,9 +77,7 @@ public class TelaAddController {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
     } catch (IllegalArgumentException e) {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-    } catch (Exception e) {
-    AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-        }
+    }
 
     }
 }

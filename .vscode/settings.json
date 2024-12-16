@@ -5,15 +5,15 @@
 	"java.project.outputPath": "bin",
 	"java.project.referencedLibraries": [
 		"lib/**/*.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx.base.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx.controls.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx.fxml.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx.graphics.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx.media.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx.swing.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx.web.jar",
-		"C:/Users/Yasmin/Documents/javafx-sdk-21.0.1/lib/javafx-swt.ja",
-		"c:\\Users\\301309x\\Desktop\\POO\\mysql-connector-j-9.1.0.jar",
-		"c:\\Users\\Yasmin\\Documents\\mysql-connector-j-9.1.0\\mysql-connector-j-9.1.0.jar"
+		"D:/javafx-sdk-21.0.5/lib/javafx.base.jar",
+		"D:/javafx-sdk-21.0.5/lib/javafx.controls.jar",
+		"D:/javafx-sdk-21.0.5/lib/javafx.fxml.jar",
+		"D:/javafx-sdk-21.0.5/lib/javafx.graphics.jar",
+		"D:/javafx-sdk-21.0.5/lib/javafx.media.jar",
+		"D:/javafx-sdk-21.0.5/lib/javafx.swing.jar",
+		"D:/javafx-sdk-21.0.5/lib/javafx.web.jar",
+		"D:/javafx-sdk-21.0.5/lib/javafx-swt.ja",
+		"C://Users//301309x//Desktop//mysql-connector-j-9.1.0.jar",
+		"c:\\Users\\301309x\\Desktop\\POO\\mysql-connector-j-9.1.0.jar"
 	]
 }

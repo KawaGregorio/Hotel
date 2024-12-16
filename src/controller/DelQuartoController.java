@@ -38,9 +38,6 @@ public class DelQuartoController {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
 } catch (IllegalArgumentException e) {
     AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-} catch (Exception e) {
-    AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-
 }
 }
 }

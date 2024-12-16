@@ -34,14 +34,14 @@ public class TelaCadastrarHospedeController {
 
     @FXML
     void Cadastrar(ActionEvent event) {
+
         try{
         String nomeCom = idNome.getText();
         String emailHosp = idEmail.getText();
         String telHosp = idTelefone.getText();
-        int cpfHosp = 0;
-        LocalDate dataHosp = idDtNact.getValue();
-        String cpfString = idCpf.getText();
+        int cpfHosp = Integer.parseInt(idCpf.getText());
 
+        LocalDate dataHosp = idDtNact.getValue();
 
         if (nomeCom == null || nomeCom.trim().isEmpty() || nomeCom.length() < 3) {
             throw new IllegalArgumentException("O nome Completo é obrigatorio e precisa ter mais de 3 letras.\n");
@@ -49,20 +49,9 @@ public class TelaCadastrarHospedeController {
         if (emailHosp == null || emailHosp.trim().isEmpty() || !emailHosp.matches("^[\\w._%+-]+@[\\w.-]+\\.[a-zA-Z]{2,6}$")){
             throw new IllegalArgumentException("O e-mail é obrigatório e deve estar em um formato válido.\n");
         }
-        if (telHosp == null || telHosp.trim().isEmpty() || !telHosp.matches("^\\d{10,11}$")){
+        if (telHosp == null || telHosp.trim().isEmpty()){
             throw new IllegalArgumentException("O telefone é obrigatório e deve conter apenas números (10 ou 11 dígitos). \n");
 
-        }
-        if (cpfString == null || cpfString.trim().isEmpty()) {
-            throw new IllegalArgumentException("O campo 'CPF' não pode estar vazio.");
-        }
-        try {
-            cpfHosp = Integer.parseInt(cpfString);
-            if (String.valueOf(cpfHosp).length() != 11) {
-                throw new IllegalArgumentException("O campo 'CPF' deve conter exatamente 11 dígitos.");
-            }
-        } catch (NumberFormatException e) {
-            throw new IllegalArgumentException("O campo 'CPF' deve conter apenas números.");
         }
 
         if (dataHosp == null){
@@ -78,8 +67,6 @@ public class TelaCadastrarHospedeController {
     }
 
 } catch (IllegalArgumentException e){
-                AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
-            } catch (Exception e){
                 AlertUtil.showAlert(AlertType.WARNING, "ERRO", e.getMessage());
             }
     }
